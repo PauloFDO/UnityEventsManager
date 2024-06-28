@@ -38,6 +38,28 @@
     }
 ```
 
+3. if you need to send complex objects you can send it in a class
+```
+    private void Awake()
+    {
+        EventsController.AddTriggerEvent<HorseRagdollPosition>(EventNames.HORSE_DIED, TriggerHorseRagdoll);
+    }
+
+    private void TriggerHorseRagdoll(HorseRagdollPosition position)
+    {
+        Debug.Log("horse ragdoll triggered on position "+ position.Position);
+        Debug.Log("horse ragdoll with rotation "+ position.Rotation);
+    }
+```
+
+then just call it:
+
+```
+ var horsePosition = new HorseRagdollPosition { Position = transform.ValueRO.Position, Rotation = transform.ValueRO.Rotation };
+ EventsController.TriggerEvent(EventNames.HORSE_DIED, horsePosition);
+```
+
+
 Tips:
 
 - You can add many listeners so when the boss is damage you could reduce it's HP, show a text message or alert minions about their boss being damaged
