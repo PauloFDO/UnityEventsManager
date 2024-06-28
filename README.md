@@ -2,6 +2,8 @@
 
 ## With event manager you can add as many listeners as you want with just one line of code
 
+You only need this file, everything else are examples: https://github.com/PauloFDO/UnityEventsManager/blob/main/Assets/Events%20Controller/EventsController.cs
+
 1. Create an event with "AddTriggerEvent", for example:
 ```
     void Start()
